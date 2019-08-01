@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Onyimatics/Banka-React.svg?branch=develop)](https://travis-ci.org/Onyimatics/Banka-React) [![CircleCI](https://circleci.com/gh/Onyimatics/Banka-React.svg?style=svg)](https://circleci.com/gh/Onyimatics/Banka-React) [![Coverage Status](https://coveralls.io/repos/github/Onyimatics/Banka-React/badge.svg?branch=develop)](https://coveralls.io/github/Onyimatics/Banka-React?branch=develop) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
 # Banka
 
 ## Table of Contents
