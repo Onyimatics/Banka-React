@@ -1,9 +1,8 @@
 module.exports = {
   reporters: ['default', 'jest-junit'],
-  collectCoverageFrom: [
-    '<rootDir>/src/**/*.{js,jsx}',
-    '!<rootDir>/__test__/**/*.(spec|test).{js,jsx}'
-  ],
+  coverageDirectory: 'coverage',
+  testPathIgnorePatterns: ['/node_modules/'],
+  transformIgnorePatterns: ['<rootDir>/node_modules/'],
   moduleNameMapper: {
     '.+\\.(css|scss)$': 'identity-obj-proxy',
     '.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)$': 'jest-transform-stub',
@@ -14,9 +13,35 @@ module.exports = {
     '^@utils/(.*)$': '<rootDir>/src/utils/$1',
     '^@config/(.*)$': '<rootDir>/src/config/$1',
   },
-  coveragePathIgnorePatterns: [
-    '<rootDir>/node_modules',
-    '<rootDir>/src/index.jsx',
+  collectCoverageFrom: [  
+      '**/*.{js,jsx}',
+      '!**/node_modules/**',
+      '!jest.config.js',
+      '!**/dist/**',
+      '!**/webpack-build-utils/**',
+      '!README.md',
+      'Procfile',
+      'Postcss.config.js',
+      '!package.json',
+      '!package-lock.json',
+      '!cypress.json',
+      '!<rootDir>/server.js',
+      '!webpack.common.js',
+      '!webpack.config.js',
+      '!**/coverage/**',
+      '!**/__test__/**',
+      '!src/actions/**',
+      '!src/assets/**',
+      '!src/reducers/**',
+      '!src/store/**',
+      '!src/index.js',
+      '!src/config/**',
+      '!src/containers/**',
+      '!index.js',
+      '!postcss.config.js',
+      '!src/utils/**',
+      '!**/cypress/**',
+      '!**/*.css'
   ],
   testPathIgnorePatterns: [
     '<rootDir>/node_modules/'

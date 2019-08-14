@@ -4,14 +4,14 @@
   "description": "Banka is a light-weight core banking application that powers banking operations like account creation, customer deposit and withdrawals. This app is meant to support a single bank, where users can signup and create bank accounts online, but must visit the branch to withdraw or deposit money.",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
     "lint": "eslint **/*.js",
     "lint:fix": "prettier-eslint \"**/*.{js,json}\" --write",
     "prettier": "prettier **/*.{js,json} --write",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "develop": "webpack --env.mode development --watch",
-    "build": "webpack --env.mode production",
-    "start:dev": "rm -rf client/dist && webpack-dev-server --env.mode development --open --hot"
+    "start:dev": "rm -rf client/dist && webpack-dev-server --env.mode development --open --hot",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch --coverage",
+    "coverage": "cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -28,8 +28,13 @@
     "css-loader": "^3.1.0",
     "file-loader": "^4.1.0",
     "image-webpack-loader": "^5.0.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "redux": "^4.0.4",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
     "style-loader": "^0.23.1",
     "webpack-merge": "^4.2.1"
   },
@@ -38,6 +43,7 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
+    "coveralls": "^3.0.6",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.3.5",
@@ -58,6 +64,7 @@
     "prettier": "^1.18.2",
     "prettier-eslint": "^9.0.0",
     "prettier-eslint-cli": "^5.0.0",
+    "redux-devtools": "^3.5.0",
     "webpack": "^4.38.0",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2"

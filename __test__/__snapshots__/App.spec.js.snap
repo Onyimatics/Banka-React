@@ -1,0 +1,379 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SAMPLE TEST should render header without crashing 1`] = `
+<header>
+  <nav
+    className="navbar"
+    id="navbar-close"
+  >
+    <NavLink
+      className="navbar-logo"
+      to="/"
+    >
+      Banka
+    </NavLink>
+    <button
+      className="hamburger-menu"
+    >
+      <a
+        className="hamburger"
+      />
+    </button>
+    <ul
+      className="navbar-menu"
+    >
+      <li
+        className="navbar-NavLink"
+      >
+        <NavLink
+          to="/"
+        >
+          Home
+        </NavLink>
+      </li>
+      <li
+        className="navbar-NavLink"
+      >
+        <NavLink
+          to="/signup"
+        >
+          Sign Up
+        </NavLink>
+      </li>
+      <li
+        className="navbar-NavLink"
+      >
+        <NavLink
+          to="/signin"
+        >
+          Signin
+        </NavLink>
+      </li>
+    </ul>
+  </nav>
+</header>
+`;
+
+exports[`SAMPLE TEST should render header without crashing 2`] = `
+<Footer>
+  <footer
+    className="in"
+  >
+    <p
+      className="credits"
+    >
+      Banka | Copyright © Andela 2019
+    </p>
+  </footer>
+</Footer>
+`;
+
+exports[`SAMPLE TEST should render the App component correctly 1`] = `
+<App>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Switch>
+        <Route
+          component={[Function]}
+          computedMatch={
+            Object {
+              "isExact": true,
+              "params": Object {},
+              "path": "/",
+              "url": "/",
+            }
+          }
+          exact={true}
+          location={
+            Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            }
+          }
+          path="/"
+        >
+          <Layout
+            history={
+              Object {
+                "action": "POP",
+                "block": [Function],
+                "createHref": [Function],
+                "go": [Function],
+                "goBack": [Function],
+                "goForward": [Function],
+                "length": 1,
+                "listen": [Function],
+                "location": Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                },
+                "push": [Function],
+                "replace": [Function],
+              }
+            }
+            location={
+              Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              }
+            }
+            match={
+              Object {
+                "isExact": true,
+                "params": Object {},
+                "path": "/",
+                "url": "/",
+              }
+            }
+          >
+            <div>
+              <Header>
+                <header>
+                  <nav
+                    className="navbar"
+                    id="navbar-close"
+                  >
+                    <NavLink
+                      className="navbar-logo"
+                      to="/"
+                    >
+                      <Link
+                        aria-current="page"
+                        className="navbar-logo active"
+                        style={Object {}}
+                        to="/"
+                      >
+                        <a
+                          aria-current="page"
+                          className="navbar-logo active"
+                          href="/"
+                          onClick={[Function]}
+                          style={Object {}}
+                        >
+                          Banka
+                        </a>
+                      </Link>
+                    </NavLink>
+                    <button
+                      className="hamburger-menu"
+                    >
+                      <a
+                        className="hamburger"
+                      />
+                    </button>
+                    <ul
+                      className="navbar-menu"
+                    >
+                      <li
+                        className="navbar-NavLink"
+                      >
+                        <NavLink
+                          to="/"
+                        >
+                          <Link
+                            aria-current="page"
+                            className="active"
+                            style={Object {}}
+                            to="/"
+                          >
+                            <a
+                              aria-current="page"
+                              className="active"
+                              href="/"
+                              onClick={[Function]}
+                              style={Object {}}
+                            >
+                              Home
+                            </a>
+                          </Link>
+                        </NavLink>
+                      </li>
+                      <li
+                        className="navbar-NavLink"
+                      >
+                        <NavLink
+                          to="/signup"
+                        >
+                          <Link
+                            aria-current={null}
+                            to="/signup"
+                          >
+                            <a
+                              aria-current={null}
+                              href="/signup"
+                              onClick={[Function]}
+                            >
+                              Sign Up
+                            </a>
+                          </Link>
+                        </NavLink>
+                      </li>
+                      <li
+                        className="navbar-NavLink"
+                      >
+                        <NavLink
+                          to="/signin"
+                        >
+                          <Link
+                            aria-current={null}
+                            to="/signin"
+                          >
+                            <a
+                              aria-current={null}
+                              href="/signin"
+                              onClick={[Function]}
+                            >
+                              Signin
+                            </a>
+                          </Link>
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </nav>
+                </header>
+              </Header>
+              <main>
+                <section
+                  className="super"
+                >
+                  <h2
+                    className="super-title"
+                  >
+                    BUILDING THE BANK OF THE FUTURE
+                  </h2>
+                  <p
+                    className="super-paragraph"
+                  >
+                    Banka is a banking application that powers banking operations like account creation, customer deposit and withdrawals. As a user of this platform, you can also view your account history after any transaction.
+                  </p>
+                  <div
+                    className="super-cta"
+                  >
+                    <NavLink
+                      className="btn btn-white"
+                      to="/signup"
+                    >
+                      <Link
+                        aria-current={null}
+                        className="btn btn-white"
+                        to="/signup"
+                      >
+                        <a
+                          aria-current={null}
+                          className="btn btn-white"
+                          href="/signup"
+                          onClick={[Function]}
+                        >
+                          Get Started
+                        </a>
+                      </Link>
+                    </NavLink>
+                  </div>
+                </section>
+                <section
+                  className="how-to"
+                >
+                  <h2
+                    className="section-title"
+                  >
+                    Join Us Today
+                  </h2>
+                  <p
+                    className="section-text"
+                  >
+                    Follow The Steps Below:
+                  </p>
+                  <div
+                    className="steps"
+                  >
+                    <div
+                      className="column step"
+                    >
+                      <span
+                        className="circle-icon"
+                      >
+                        1
+                      </span>
+                      <p
+                        className="section-text"
+                      >
+                        Sign up and log in as a user. You can decide to update your profile for better view on the platform.
+                      </p>
+                    </div>
+                    <div
+                      className="column step"
+                    >
+                      <span
+                        className="circle-icon"
+                      >
+                        2
+                      </span>
+                      <p
+                        className="section-text"
+                      >
+                        Create an account as a user. By doing this, a unique account number will be generated for you by the system.
+                      </p>
+                    </div>
+                    <div
+                      className="column step"
+                    >
+                      <span
+                        className="circle-icon"
+                      >
+                        3
+                      </span>
+                      <p
+                        className="section-text"
+                      >
+                        Your account will be activated and you can now enjoy our services.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              </main>
+              <Footer>
+                <footer
+                  className="in"
+                >
+                  <p
+                    className="credits"
+                  >
+                    Banka | Copyright © Andela 2019
+                  </p>
+                </footer>
+              </Footer>
+            </div>
+          </Layout>
+        </Route>
+      </Switch>
+    </Router>
+  </BrowserRouter>
+</App>
+`;
