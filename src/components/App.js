@@ -1,9 +1,19 @@
 import React from 'react';
+import HomePage from './HomePage';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Signup from './Signup';
+import Signin from './Signin';
 
-export default function App() {
+const App = () => {
   return (
-    <div>
-      Hello World
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/signin" component={Signin} />
+      </Switch>
+    </BrowserRouter>
   );
-}
+};
+
+export default App;
