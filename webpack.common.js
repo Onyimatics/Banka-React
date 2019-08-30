@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -28,7 +27,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader']
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.(gif|png|jpg|jpe?g|svg)$/i,
@@ -41,17 +40,11 @@ module.exports = {
               outputPath: 'images/',
               publicPath: 'images/',
               bypassOnDebug: true,
-              disable: true, 
-            },
-          },
-        ],
+              disable: true
+            }
+          }
+        ]
       }
     ]
-  },
-  externals: {
-config: JSON.stringify({
-  apiUrl: 'http://localhost:3000',
-}),
-},
+  }
 };
-
