@@ -1,8 +1,9 @@
 const path = require('path')
+
 module.exports = {
   devtool: "source-map",
       output: {
-    path: path.resolve(__dirname, "./dist"),
+    path: path.resolve(__dirname, "./src/dist"),
       filename: "app.js",
         publicPath: "/"
   },
