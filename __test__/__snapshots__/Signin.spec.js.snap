@@ -1,0 +1,294 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signin component renders without crashing 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(SignInForm)
+        authAction={[MockFunction]}
+        error={null}
+        history={
+          Object {
+            "push": [MockFunction],
+          }
+        }
+        isAuthenticated={false}
+        location={
+          Object {
+            "url": "/user-dashboard",
+          }
+        }
+        status=""
+      >
+        <SignInForm
+          authAction={[Function]}
+          history={
+            Object {
+              "push": [MockFunction],
+            }
+          }
+          isAuthenticated={false}
+          location={
+            Object {
+              "url": "/user-dashboard",
+            }
+          }
+          status="rest"
+        >
+          <div>
+            <Header>
+              <header>
+                <nav
+                  className="navbar"
+                  id="navbar-close"
+                >
+                  <NavLink
+                    className="navbar-logo"
+                    to="/"
+                  >
+                    <Link
+                      aria-current="page"
+                      className="navbar-logo active"
+                      style={Object {}}
+                      to="/"
+                    >
+                      <a
+                        aria-current="page"
+                        className="navbar-logo active"
+                        href="/"
+                        onClick={[Function]}
+                        style={Object {}}
+                      >
+                        Banka
+                      </a>
+                    </Link>
+                  </NavLink>
+                  <button
+                    className="hamburger-menu"
+                  >
+                    <a
+                      className="hamburger"
+                    />
+                  </button>
+                  <ul
+                    className="navbar-menu"
+                  >
+                    <li
+                      className="navbar-NavLink"
+                    >
+                      <NavLink
+                        to="/"
+                      >
+                        <Link
+                          aria-current="page"
+                          className="active"
+                          style={Object {}}
+                          to="/"
+                        >
+                          <a
+                            aria-current="page"
+                            className="active"
+                            href="/"
+                            onClick={[Function]}
+                            style={Object {}}
+                          >
+                            Home
+                          </a>
+                        </Link>
+                      </NavLink>
+                    </li>
+                    <li
+                      className="navbar-NavLink"
+                    >
+                      <NavLink
+                        to="/signup"
+                      >
+                        <Link
+                          aria-current={null}
+                          to="/signup"
+                        >
+                          <a
+                            aria-current={null}
+                            href="/signup"
+                            onClick={[Function]}
+                          >
+                            Sign Up
+                          </a>
+                        </Link>
+                      </NavLink>
+                    </li>
+                    <li
+                      className="navbar-NavLink"
+                    >
+                      <NavLink
+                        to="/signin"
+                      >
+                        <Link
+                          aria-current={null}
+                          to="/signin"
+                        >
+                          <a
+                            aria-current={null}
+                            href="/signin"
+                            onClick={[Function]}
+                          >
+                            Signin
+                          </a>
+                        </Link>
+                      </NavLink>
+                    </li>
+                  </ul>
+                </nav>
+              </header>
+            </Header>
+            <main>
+              <section
+                className="container form-container"
+              >
+                <h2
+                  className="section-title"
+                >
+                  SignIn
+                </h2>
+                <form
+                  className="form-card"
+                  onSubmit={[Function]}
+                >
+                  <div
+                    className="errors"
+                  >
+                    <ul />
+                  </div>
+                  <label
+                    htmlFor="email"
+                  >
+                    Enter Email
+                    <span>
+                      *
+                    </span>
+                  </label>
+                  <input
+                    className="form-element"
+                    id="email"
+                    name="email"
+                    onChange={[Function]}
+                    placeholder="email@gmail.com"
+                    required={true}
+                    type="email"
+                  />
+                  <div
+                    className="error"
+                    id="email-error"
+                  />
+                  <label
+                    htmlFor="password"
+                  >
+                    Enter Password
+                    <span>
+                      *
+                    </span>
+                  </label>
+                  <input
+                    className="form-element"
+                    id="password"
+                    name="password"
+                    onChange={[Function]}
+                    placeholder="........"
+                    required={true}
+                    type="password"
+                  />
+                  <div
+                    className="error"
+                    id="password-error"
+                  />
+                  <button
+                    className="btn btn-primary user-form"
+                    id="button-submit"
+                    type="submit"
+                  >
+                    Signin
+                  </button>
+                  <div
+                    className="margin--top--10 margin--below "
+                  >
+                    <p
+                      className="text--primary1"
+                    >
+                      Dont have an account?
+                      <a
+                        className="text--color--grey"
+                        href="./signup.html"
+                      >
+                        <u>
+                          Sign Up
+                        </u>
+                      </a>
+                    </p>
+                  </div>
+                </form>
+              </section>
+            </main>
+            <Footer>
+              <div
+                style={
+                  Object {
+                    "background": "#EFEFEF",
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "height": "410px",
+                    "justifyContent": "flex-end",
+                  }
+                }
+              >
+                <footer
+                  className="in"
+                  style={Object {}}
+                >
+                  <p
+                    className="credits"
+                  >
+                    Banka | Copyright © Andela 2019
+                  </p>
+                </footer>
+              </div>
+            </Footer>
+          </div>
+        </SignInForm>
+      </Connect(SignInForm)>
+      ;
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;

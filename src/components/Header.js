@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+import { logout } from '../store/modules/auth/actions'
 
 const Header = props => {
   return (

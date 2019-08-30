@@ -1,53 +1,37 @@
 module.exports = {
-  reporters: ['default', 'jest-junit'],
+  // setupFiles: ['<rootDir>/__test__/setup.js'],
   coverageDirectory: 'coverage',
-  testPathIgnorePatterns: ['/node_modules/'],
-  transformIgnorePatterns: ['<rootDir>/node_modules/'],
+  transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$'],
   moduleNameMapper: {
     '.+\\.(css|scss)$': 'identity-obj-proxy',
-    '.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)$': 'jest-transform-stub',
-    '^@components/(.*)$': '<rootDir>/src/components/$1',
-    '^@helpers/(.*)$': '<rootDir>/src/helpers/$1',
-    '^@reducers/(.*)$': '<rootDir>/src/reducers/$1',
-    '^@actions/(.*)$': '<rootDir>/src/actions/$1',
-    '^@utils/(.*)$': '<rootDir>/src/utils/$1',
-    '^@config/(.*)$': '<rootDir>/src/config/$1',
+    // '\\.svg': '<rootDir>/__test__/__mock__/svgrMock.js',
+    '.+\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2)$':
+      'jest-transform-stub',
+    '^@config(.*)$': '<rootDir>/src/config$1',
+    '^@components(.*)$': '<rootDir>/src/components$1',
+    '^@modules(.*)$': '<rootDir>/src/store/modules$1',
+    '^@pages(.*)$': '<rootDir>/src/pages$1',
+    '^@utils(.*)$': '<rootDir>/src/utils$1',
+    '^@assets(.*)$': '<rootDir>/src/assets$1',
+    '^@utils(.*)$': '<rootDir>/src/utils$1',
+    '@/(.*)$': '<rootDir>/src$1'
   },
-  collectCoverageFrom: [  
-      '**/*.{js,jsx}',
-      '!**/node_modules/**',
-      '!jest.config.js',
-      '!**/dist/**',
-      '!**/webpack-build-utils/**',
-      '!README.md',
-      'Procfile',
-      'Postcss.config.js',
-      '!package.json',
-      '!package-lock.json',
-      '!cypress.json',
-      '!<rootDir>/server.js',
-      '!webpack.common.js',
-      '!webpack.config.js',
-      '!**/coverage/**',
-      '!**/__test__/**',
-      '!src/actions/**',
-      '!src/assets/**',
-      '!src/reducers/**',
-      '!src/store/**',
-      '!src/index.js',
-      '!src/config/**',
-      '!src/containers/**',
-      '!index.js',
-      '!postcss.config.js',
-      '!src/utils/**',
-      '!**/cypress/**',
-      '!**/*.css'
+  collectCoverageFrom: [
+    'src/**/*.{js,jsx}',
+    '!<rootDir>/__test__/**/*.(spec|test).{js,jsx}',
+    '!**/dist/**',
   ],
-  testPathIgnorePatterns: [
-    '<rootDir>/node_modules/'
+  coveragePathIgnorePatterns: [
+    '<rootDir>/node_modules',
+    '<rootDir>/dist/',
+    '<rootDir>/src/utils',
+    '<rootDir>/src/components/icons',
+    '<rootDir>/src/index.js',
+    '<rootDir>/src/store/index.js',
+    '<rootDir>/src/config/'
   ],
+  testPathIgnorePatterns: ['<rootDir>/node_modules/'],
   transform: {
-    '^.+\\.(js|jsx|mjs)$': '<rootDir>/node_modules/babel-jest',
-  },
-  transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$'],
+    '^.+\\.(js|jsx|mjs)$': '<rootDir>/node_modules/babel-jest'
+  }
 };
