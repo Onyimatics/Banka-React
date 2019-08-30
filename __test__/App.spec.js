@@ -1,9 +1,9 @@
 import React from 'react';
-import { shallow, mount, render } from './enzyme';
 import toJson from 'enzyme-to-json';
 import App from '@components/App';
 import Header from '../src/components/Header'
 import Footer from '../src/components/Footer'
+import { mount, shallow} from './enzyme';
 
 
 describe('SAMPLE TEST', () => {

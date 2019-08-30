@@ -1,6 +1,29 @@
 {
   "presets": [
-    "@babel/preset-react",
-    "@babel/preset-env"
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "react-hot-loader/babel",
+    "emotion",
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./"
+        ],
+        "alias": {
+          "@": "./"
+        }
+      }
+    ],
+    "@babel/plugin-proposal-class-properties"
   ]
 }

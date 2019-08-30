@@ -4,11 +4,29 @@ module.exports = {
     es6: true,
     jest: true
   },
-  extends: ['airbnb', 'prettier', 'plugin:jsx-a11y/recommended'],
-  plugins: ['prettier'],
+  settings: {
+    'import/resolver': {
+      webpack: {
+        config: './webpack.common.js'
+      }
+    }
+  },
+  extends: [
+    'airbnb',
+    'prettier',
+    'plugin:jsx-a11y/recommended',
+    'plugin:cypress/recommended'
+  ],
+  plugins: ['react', 'prettier', 'emotion'],
   globals: {
     Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
+    SharedArrayBuffer: 'readonly',
+    shallow: true,
+    mount: true,
+    expect: true,
+    render: true,
+    toJson: true,
+    moxios: true
   },
   parserOptions: {
     ecmaFeatures: {
@@ -18,7 +36,6 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['react', 'jsx-a11y'],
-  // rules: {}
   rules: {
     'one-var': 0,
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
@@ -30,6 +47,7 @@ module.exports = {
     'comma-dangle': 0,
     curly: ['error', 'multi-line'],
     'import/no-unresolved': [2, { commonjs: true }],
-    'no-shadow': ['error', { allow: ['req', 'res', 'err'] }]
+    'no-shadow': ['error', { allow: ['req', 'res', 'err'] }],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }]
   }
 };

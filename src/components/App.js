@@ -1,18 +1,17 @@
 import React from 'react';
-import HomePage from './HomePage';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Signup from './Signup';
-import Signin from './Signin';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from '../routes/AppRouter';
+
+import store from '../store';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/signup" component={Signup} />
-        <Route path="/signin" component={Signin} />
-      </Switch>
-    </BrowserRouter>
+    <Provider store={store}>
+      <Router>
+        <Routes />
+      </Router>
+    </Provider>
   );
 };
 
