@@ -48,10 +48,10 @@ export const getTransactions = accountNumber => async dispatch => {
         Authorization: token
       }
     });
-    const { data } = getSuccessResponse(response);
+    const data = getSuccessResponse(response);
     dispatch(getTransactionSuccess(data));
   } catch (error) {
-    const message = getErrorResponse(error);
+    const message = error;
     dispatch(getTransactionFailure(message));
   }
 };

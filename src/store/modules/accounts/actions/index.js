@@ -78,10 +78,10 @@ export const getAccounts = () => async dispatch => {
         Authorization: token
       }
     });
-    const { data } = getSuccessResponse(response);
+    const data  = getSuccessResponse(response);
     dispatch(getAccountSuccess(data));
   } catch (error) {
-    const message = getErrorResponse(error);
+    const {message} = error;
     dispatch(getAccountFailure(message));
   }
 };
@@ -103,13 +103,12 @@ export const createAccounts = (
         Authorization: token
       }
     });
-    const { data } = getSuccessResponse(response);
+    const data  = getSuccessResponse(response);
     dispatch(createAccountSuccess(data));
     Toastr.success('Successfully created an account!');
     history.push('/user-dashboard');
   } catch (error) {
     const message = getErrorResponse(error);
-    Toastr.error(message);
     dispatch(createAccountFailure(message));
   }
 };
