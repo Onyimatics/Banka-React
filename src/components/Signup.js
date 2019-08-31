@@ -6,7 +6,7 @@ import Footer from './Footer';
 import { authAction, logout } from '../store/modules/auth/actions';
 import checkStatus from '../utils/checkStatus';
 
-class SignUpForm extends Component {
+export class SignUpForm extends Component {
   constructor() {
     super();
     this.handleInputOnChange = this.handleInputOnChange.bind(this);

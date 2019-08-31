@@ -6,7 +6,7 @@ import Footer from './Footer';
 import { authAction } from '../store/modules/auth/actions';
 import checkStatus from '../utils/checkStatus';
 
-class SignInForm extends Component {
+export class SignInForm extends Component {
   constructor() {
     super();
     this.handleInputOnChange = this.handleInputOnChange.bind(this);

@@ -5,7 +5,7 @@ import configureStore from 'redux-mock-store';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import toJson from 'enzyme-to-json';
 import thunk from 'redux-thunk';
-import SignInForm from '../src/components/Signin';
+import SignInForm, { SignInForm as ConnectedLogin} from '../src/components/Signin';
 
 const createStore = (isAuthenticated = false, user = {}, status = 'rest') => {
   const content = {
@@ -32,9 +32,7 @@ const props = {
   history: { push: jest.fn() }
 };
 
-
 describe('Signin component', () => {
-
   it('renders without crashing', () => {
     const wrapper = mount(
       <Provider store={createStore()}>
@@ -48,22 +46,17 @@ describe('Signin component', () => {
     expect(wrapper).toBeDefined();
     const field = wrapper.find('input').first();
     expect(field.exists()).toBe(true);
-    expect(field.props().name).toEqual('email')
-
+    expect(field.props().name).toEqual('email');
   });
 
   it('renders one form', () => {
     const wrapper = mount(
       <Provider store={createStore()}>
         <Router>
-            
           <SignInForm {...props} />
-           
-          
         </Router>
       </Provider>
     );
-    ;
     expect(wrapper.find('h2').text()).toEqual('SignIn');
     expect(wrapper.find('form')).toBeTruthy();
     expect(wrapper.find('form').length).toBe(1);
@@ -74,15 +67,72 @@ describe('Signin component', () => {
       <Provider store={createStore()}>
         <Router>
           <SignInForm {...props} />;
-         
         </Router>
       </Provider>
     );
     expect(wrapper.find('input').length).toBe(2);
-    expect(wrapper.find('input').at(0).props().type).toBe('email');
-    expect(wrapper.find('input').at(1).props().type).toBe('password');
+    expect(
+      wrapper
+        .find('input')
+        .at(0)
+        .props().type
+    ).toBe('email');
+    expect(
+      wrapper
+        .find('input')
+        .at(1)
+        .props().type
+    ).toBe('password');
     expect(wrapper.find('button').length).toBe(2);
-    expect(wrapper.find('button').at(0).props().type).toBe(undefined);
-    expect(wrapper.find('button').at(1).props().type).toBe('submit');
+    expect(
+      wrapper
+        .find('button')
+        .at(0)
+        .props().type
+    ).toBe(undefined);
+    expect(
+      wrapper
+        .find('button')
+        .at(1)
+        .props().type
+    ).toBe('submit');
+  });
+
+  it('should submit a valid form', () => {
+    const wrapper = mount(
+      <Provider store={createStore()}>
+        <Router>
+          <ConnectedLogin {...props} />;
+        </Router>
+      </Provider>
+    );
+    
+    const event = {
+      preventDefault: jest.fn()
+    };
+    const emailInput = wrapper.find("input[name='email']");
+    const passwordInput = wrapper.find("input[name='password']");
+    emailInput.simulate('change', {
+      target: {
+        name: 'email',
+        value: 'onyinye@name.com'
+      }
+    });
+    passwordInput.simulate('change', {
+      target: {
+        name: 'password',
+        value: '123456789'
+      }
+    });
+    wrapper.find('form').simulate('submit', event);
+
+    expect(props.authAction).toHaveBeenCalledWith({
+      userData: {
+        email: 'onyinye@name.com',
+        password: '123456789'
+      },
+      history: props.history,
+      url: undefined
+    });
   });
 });

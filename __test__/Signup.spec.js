@@ -34,17 +34,11 @@ const props = {
   isAuthenticated: false,
   error: null,
   location: { url: '/user-dashboard' },
-  history: { push: jest.fn() }
+  history: { push: jest.fn() },
 };
 
 
 describe('Signup component', () => {
-  beforeEach(() => {
-    location = {
-      search: `token=${userToken}`,
-      url: '/'
-    };
-  });
   it('renders without crashing', () => {
     const wrapper = mount(
       <Provider store={createStore()}>
@@ -64,12 +58,10 @@ describe('Signup component', () => {
     const wrapper = mount(
       <Provider store={createStore()}>
         <Router>
-          <SignUpForm {...props} location={location} />;
+          <SignUpForm {...props} />;
         </Router>
       </Provider>
     );
-
-
 
     expect(wrapper.find('h2').text()).toEqual('Sign Up');
     expect(wrapper.find('SignUpForm')).toBeTruthy();
@@ -82,12 +74,11 @@ describe('Signup component', () => {
       <Provider store={createStore()}>
         <Router>
       
-          <SignUpForm {...props} location={location} /> 
+          <SignUpForm {...props} /> 
          
         </Router>
       </Provider>
     );
-
     expect(wrapper.find('input').length).toBe(4);
     expect(wrapper.find('input').at(0).props().type).toBe('text');
     expect(wrapper.find('input').at(1).props().type).toBe('text');
@@ -97,4 +88,54 @@ describe('Signup component', () => {
     expect(wrapper.find('button').at(0).props().type).toBe(undefined);
     expect(wrapper.find('button').at(1).props().type).toBe('submit');
   });
+  it('should submit a valid form', () => {
+    const wrapper = mount(
+      <Provider store={createStore()}>
+        <Router>
+
+          <SignUpForm {...props} />
+
+        </Router>
+      </Provider>
+
+    );
+
+    const event = {
+      preventDefault: jest.fn()
+    };
+    const firstNameInput = wrapper.find("input[name='firstName']");
+    const secondNameInput = wrapper.find("input[name='lastName']");
+    const emailInput = wrapper.find("input[name='email']");
+    const passwordnput = wrapper.find("input[name='password']");
+    firstNameInput.simulate('change', {
+      target: {
+        name: 'firstName',
+        value: 'Onyinye'
+      }
+    });
+    secondNameInput.simulate('change', {
+      target: {
+        name: 'lastName',
+        value: 'Ezike'
+      }
+    });
+    emailInput.simulate('change', {
+      target: {
+        name: 'email',
+        value: 'onyinye@email.com'
+      }
+    });
+    passwordnput.simulate('change', {
+      target: {
+        name: 'password',
+        value: '123456789'
+      }
+    });
+    wrapper.find('form').simulate('submit', event);
+    expect(wrapper.find('SignUpForm').state('firstName')).toEqual('Onyinye');
+    expect(wrapper.find('SignUpForm').state('lastName')).toEqual("Ezike");
+    expect(wrapper.find('SignUpForm').state('email')).toEqual("onyinye@email.com");
+    expect(wrapper.find('SignUpForm').state('password')).toEqual("123456789");
+ 
+})
 })

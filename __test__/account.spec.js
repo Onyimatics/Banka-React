@@ -7,13 +7,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import toJson from 'enzyme-to-json';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import {
-  render,
-  fireEvent,
-  waitForDomChange,
-  cleanup
-} from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 import CreateAccountForm from '../src/components/CreateAccount';
 
 const mockStore = configureMockStore([thunk]);
@@ -98,7 +91,7 @@ describe('UserDashboard', () => {
   afterEach(() => {
     jest.clearAllMocks();
     store = null;
-  }, cleanup);
+  });
 
   it('should have 1 input on dashboard', () => {
     const wrapper = renderWithEnzymes();
