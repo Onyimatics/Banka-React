@@ -39,6 +39,7 @@ exports[`UserDashboard should render Create account Component 1`] = `
       <Connect(UserDashboard)
         createAccounts={[MockFunction]}
         getAccount={[MockFunction]}
+        getAccounts={[MockFunction]}
         history={
           Object {
             "push": [MockFunction],
@@ -63,6 +64,7 @@ exports[`UserDashboard should render Create account Component 1`] = `
           data={Array []}
           error={null}
           getAccount={[Function]}
+          getAccounts={[MockFunction]}
           getTransaction={[Function]}
           history={
             Object {
@@ -367,6 +369,7 @@ exports[`UserDashboard should render UserDashboard Component 1`] = `
       <Connect(UserDashboard)
         createAccounts={[MockFunction]}
         getAccount={[MockFunction]}
+        getAccounts={[MockFunction]}
         history={
           Object {
             "push": [MockFunction],
@@ -391,6 +394,7 @@ exports[`UserDashboard should render UserDashboard Component 1`] = `
           data={Array []}
           error={null}
           getAccount={[Function]}
+          getAccounts={[MockFunction]}
           getTransaction={[Function]}
           history={
             Object {

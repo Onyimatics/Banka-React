@@ -8,6 +8,7 @@ import toJson from 'enzyme-to-json';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import CreateAccountForm from '../src/components/CreateAccount';
+import DisplayAccounts from '../src/components/DisplayAccounts';
 
 const mockStore = configureMockStore([thunk]);
 let store;
@@ -25,6 +26,7 @@ const props = {
     }
   },
   getAccount: jest.fn(),
+  getAccounts: jest.fn(),
 createAccounts: jest.fn(),
   location: { url: '/user-dashboard' },
   history: { push: jest.fn() }
@@ -86,6 +88,7 @@ const renderCreateAccount = state => {
     </Provider>
   );
 };
+
 
 describe('UserDashboard', () => {
   afterEach(() => {
