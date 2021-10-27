@@ -61,11 +61,11 @@ export class SignUpForm extends Component {
   }
 
   render() {
-    const {
-      isAuthenticated,
-      location: { url }
-    } = this.props;
-    if (!isAuthenticated) return <Redirect to={url || '/signup'} />;
+    // const {
+    //   isAuthenticated,
+    //   location: { url }
+    // } = this.props;
+    // if (!isAuthenticated) return <Redirect to={url || '/signup'} />;
     return (
       <div>
         <Header />

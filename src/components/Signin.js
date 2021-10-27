@@ -104,9 +104,9 @@ export class SignInForm extends Component {
               <div className="margin--top--10 margin--below ">
                 <p className="text--primary1">
                   Dont have an account?
-                  <a href="./signup.html" className="text--color--grey">
+                  <Link to='/signup' className="text--color--grey">
                     <u>Sign Up</u>
-                  </a>
+                  </Link>
                 </p>
               </div>
             </form>
